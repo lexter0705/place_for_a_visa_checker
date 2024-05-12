@@ -1,0 +1,39 @@
+from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine, Column, Integer, String, Boolean
+import json_checker
+
+DATABASE_URL = "sqlite:///" + json_checker.get_data_for_web_bot()["data_base_path"]
+engine = create_engine(DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+
+class Base(DeclarativeBase):
+    pass
+
+
+class Users(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    count_of_checked = Column(Integer)
+    is_height_priority = Column(Boolean)
+
+
+class Bls(Base):
+    __tablename__ = 'bots'
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer)
+    email = Column(String)
+    pass_email = Column(String)
+    pass_account = Column(String)
+    proxy_ip_port = Column(String)
+    proxy_login = Column(String)
+    proxy_password = Column(String)
+
+
+if __name__ == "__main__":
+    Base.metadata.create_all(bind=engine)
+    print("Database Created!")
