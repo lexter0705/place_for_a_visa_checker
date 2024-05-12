@@ -1,17 +1,14 @@
 from database.setter import DataBase, UserTable, BlsTable
-import json_checker
+from json_checker import get_data_for_telegram_bot
 
 
 class State:
     table: DataBase | None = None
     messages: list = []
+    columns: list = []
 
 
-class UserState(State):
+class NewCheckerState(State):
     table = UserTable()
-    messages = json_checker.get_data_for_telegram_bot()["user_messages"]
-
-
-class BotState(State):
-    table = BlsTable()
-    messages = json_checker.get_data_for_telegram_bot()["bot_messages"]
+    messages = get_data_for_telegram_bot()["user_messages"]
+    columns = get_data_for_telegram_bot()["user_columns"]

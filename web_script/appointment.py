@@ -1,7 +1,5 @@
-from selenium.webdriver.common.by import By
 from web_script.filler import Filler
 from web_script.captcha_checker import CaptchaChecker
-from web_script.sender import send_message
 from selenium.webdriver.remote.webdriver import WebDriver
 import json_checker
 
@@ -25,10 +23,10 @@ class Authorizer:
         self.captcha_checker.check_captcha()
         self.filler.press_button_by_selector("#btnSubmit")
 
-    def set_login_and_password(self, login: str, password: str):
-        if len(login.split("@")) < 2:
+    def set_login_and_password(self, email: str, password: str):
+        if len(email.split("@")) < 2 and len(email.split(".")) < 2:
             return
-        self.email = login
+        self.email = email
         self.password = password
 
 
@@ -50,7 +48,8 @@ class AppointmentChecker:
         self.fill_input_for_appointment(appointment_data)
         self.filler.press_button_by_selector("#btnSubmit")
         self.filler.sleep()
-        return self.get_last_answer()
+        keys = json_checker.get_data_for_web_bot()["data_for_add_appointment"]["inputs_data_for_check"]
+        return self.get_last_answer(appointment_data[keys["#Location"]])
 
     def fill_input_for_appointment(self, data_for_inputs: list[str]):
         keys = json_checker.get_data_for_web_bot()["data_for_add_appointment"]["inputs_data_for_check"]
@@ -58,12 +57,12 @@ class AppointmentChecker:
         for i in keys.keys():
             self.filler.fill_protected_drop_down_list(i, 20, data_for_inputs[keys[i]])
 
-    def get_last_answer(self) -> str:
+    def get_last_answer(self, city: str) -> str:
         if self.filler.is_element_on_display("#commonModalHeader"):
-            last_element = self.browser.find_element(By.CSS_SELECTOR, "#commonModalHeader")
-            send_message(last_element.text)
+            last_element_text = f"Виз по городу {city} нет! Можете не обращать внимания."
+        elif self.filler.is_element_on_display("#addressModalHeader"):
+            last_element_text = f"Визы по городу {city} есть! Бегите регистрироваться."
         else:
-            last_element = self.browser.find_element(By.CSS_SELECTOR, "#addressModalHeader")
-            send_message(last_element.text)
+            last_element_text = f"Виз по городу {city} нет! Можете не обращать внимания."
 
-        return last_element.text
+        return last_element_text

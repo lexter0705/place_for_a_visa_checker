@@ -7,22 +7,29 @@ class DataListener:
         self.table: DataBase | None = None
         self.state = State()
         self.iteration = 0
-        self.data = []
+        self.data = {}
 
     def set_state(self, state: State):
         self.reset()
         self.state = state
 
-    def get_text(self):
+    def get_message(self) -> dict:
         message = self.state.messages[self.iteration]
         self.iteration += 1
         return message
 
-    def add_data(self, text: str):
+    def add_data(self, text: str) -> bool:
         if not self.state.table:
-            return
+            return False
 
-        self.data.append(text)
+        if not self.state.columns:
+            return False
+
+        if not self.state.messages:
+            return False
+
+        self.data[self.state.columns[self.iteration]] = text
+        return True
 
     def write_to_database(self):
         self.state.table.add_to_database(self.data)

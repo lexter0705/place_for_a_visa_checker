@@ -49,6 +49,10 @@ class UserTable(DataBase):
         table_data = self.conn.execute(select(self.table).where(self.table.is_height_priority is False)).all()
         return table_data
 
+    def select_user(self, user_id: int):
+        table_data = self.conn.execute(select(self.table).where(self.table.id == user_id)).all()
+        return table_data
+
 
 class BlsTable(DataBase):
     def __init__(self):
