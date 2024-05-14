@@ -18,7 +18,6 @@ class Parser:
     def run(self):
         while True:
             accounts = self.user_table.select_all_from_database()
-            print(accounts)
             self.check_accounts(accounts)
             self.sleep()
 
@@ -34,16 +33,21 @@ class Parser:
             return
         account_id = account[0]
         account_blses = self.bls_table.get_all_user_check(account[0])
-        print(account_blses)
         for blses in account_blses:
             browser = self.open_browser_with_proxy(*blses[len(blses) - 3:])
-            authorizer = appointment.Authorizer(browser)
-            appointment_checker = appointment.AppointmentChecker(browser)
-            authorizer.set_login_and_password(blses[2], blses[3])
-            authorizer.login()
-            authorizer.filler.sleep()
-            data = appointment_checker.check_appointment(Parser.extract_data_for_check(blses))
-            send_message(data, account_id)
+            try:
+                authorizer = appointment.Authorizer(browser)
+                appointment_checker = appointment.AppointmentChecker(browser)
+                authorizer.set_login_and_password(blses[2], blses[3])
+                authorizer.login()
+                authorizer.filler.sleep()
+                data = appointment_checker.check_appointment(Parser.extract_data_for_check(blses))
+                browser.close()
+                send_message(data, account_id)
+            except Exception as e:
+                print(e)
+                browser.close()
+                send_message(f"Виз по городу {blses[5]} нет! Можете не обращать внимания.", account_id)
 
     def open_browser_with_proxy(self, ip_port: str, login: str, password: str) -> WebDriver:
         if not ip_port:
@@ -58,6 +62,7 @@ class Parser:
             },
         }
         opts = FirefoxOptions()
+        opts.add_argument("--headless")
         return webdriver.Firefox(seleniumwire_options=options, options=opts)
 
     def sleep(self):

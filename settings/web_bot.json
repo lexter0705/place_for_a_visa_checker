@@ -1,16 +1,14 @@
 {
   "sleep_between_accounts": 300,
   "data_base_path": "../database/database.db",
-  "sleep_time": 3,
+  "sleep_time": 5,
   "path_to_screenshots": "../web_script/screens/",
-
   "data_for_login": {
     "url": "https://russia.blsspainglobal.com/Global/Account/LogIn",
     "login_offset": 100,
     "password_offset": 100,
     "button_id": "btnVerify"
   },
-
   "data_for_add_appointment": {
     "check_appointment_url": "https://russia.blsspainglobal.com/Global/bls/visatypeverification",
     "inputs_data_for_check": {
@@ -24,5 +22,4 @@
   "base_proxy_ip_port": "109.68.211.210:3000",
   "base_proxy_login": "fqt6fY",
   "base_proxy_password": "PJoat3khLk"
-
 }

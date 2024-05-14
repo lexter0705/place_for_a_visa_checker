@@ -8,7 +8,7 @@ class DataListener:
         self.state: State | None = None
         self.iteration = 0
         self.data = {"email": "lexter29072007@gmail.com",
-                     "pass_account": "Ter29072007",
+                     "pass_account": "Ter29072007!",
                      "proxy_ip_port": "",
                      "proxy_login": "",
                      "proxy_password": ""}

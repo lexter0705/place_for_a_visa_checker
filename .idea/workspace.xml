@@ -6,16 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bb652747-80cc-4354-a5b1-426e46381693" name="Changes" comment="database file Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/creator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/setter.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/setter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/json_checker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/register_bot/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/register_bot/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register_bot/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/register_bot/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register_bot/states.py" beforeDir="false" afterPath="$PROJECT_DIR$/register_bot/states.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/telegram_bot.json" beforeDir="false" afterPath="$PROJECT_DIR$/settings/telegram_bot.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings/web_bot.json" beforeDir="false" afterPath="$PROJECT_DIR$/settings/web_bot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_script/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_script/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715551159088</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="database file Commit">
+      <option name="closed" value="true" />
+      <created>1715724557404</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715724557404</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
