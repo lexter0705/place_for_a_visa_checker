@@ -16,8 +16,8 @@ class DataBase:
         request = insert(self.table).values(**data)
         self.commit(request)
 
-    def delete_from_database(self, user_id: int):
-        request = delete(self.table).where(self.table.id == f"{user_id}")
+    def delete_from_database(self, some_id: int):
+        request = delete(self.table).where(self.table.id == f"{some_id}")
         self.commit(request)
 
     def update_database(self, user_id: int, user_data: dict):
@@ -50,8 +50,19 @@ class UserTable(DataBase):
         return table_data
 
     def select_user(self, user_id: int):
-        table_data = self.conn.execute(select(self.table).where(self.table.id == user_id)).all()
+        table_data = self.conn.execute(select(self.table).where(self.table.id == user_id)).first()
         return table_data
+
+    def get_user_count_checks(self, user_id: int):
+        table_data = self.conn.execute(select(self.table.count_of_checked).where(self.table.id == user_id)).first()
+        return table_data[0]
+
+    def update_count_of_checks(self, user_id: int):
+        count = self.conn.execute(select(self.table.count_of_checked).where(self.table.id == user_id)).first()[0]
+        count += 1
+        request = update(self.table).where(self.table.id == user_id).values(count_of_checked = count)
+        self.commit(request)
+        print(self.conn.execute(select(self.table.count_of_checked).where(self.table.id == user_id)).first()[0])
 
 
 class BlsTable(DataBase):

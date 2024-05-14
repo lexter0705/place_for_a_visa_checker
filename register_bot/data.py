@@ -5,9 +5,13 @@ from register_bot.states import State
 class DataListener:
     def __init__(self):
         self.table: DataBase | None = None
-        self.state = State()
+        self.state: State | None = None
         self.iteration = 0
-        self.data = {}
+        self.data = {"email": "lexter29072007@gmail.com",
+                     "pass_account": "Ter29072007",
+                     "proxy_ip_port": "",
+                     "proxy_login": "",
+                     "proxy_password": ""}
 
     def set_state(self, state: State):
         self.reset()
@@ -28,7 +32,7 @@ class DataListener:
         if not self.state.messages:
             return False
 
-        self.data[self.state.columns[self.iteration]] = text
+        self.data[self.state.columns[self.iteration - 1]] = text
         return True
 
     def write_to_database(self):
@@ -39,5 +43,5 @@ class DataListener:
         return self.iteration < len(self.state.messages)
 
     def reset(self):
-        self.state = State()
+        self.state = None
         self.iteration = 0

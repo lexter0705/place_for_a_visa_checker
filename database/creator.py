@@ -38,6 +38,10 @@ class Bls(Base):
     proxy_password = Column(String)
 
 
-if __name__ == "__main__":
+def start():
     Base.metadata.create_all(bind=engine)
     print("Database Created!")
+
+
+if __name__ == "__main__":
+    start()

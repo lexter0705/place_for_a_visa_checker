@@ -1,14 +1,14 @@
 {
   "data_base_path": "database/database.db",
   "token": "7175722271:AAGT2dI3_iSQ0q3Yb6GOMmPlcWZmnlsiWC8",
-  "start_text": "Привет меня зовут Шенгена!\nЯ бот\uD83E\uDD16 который подскажет тебе когда улететь в Европу, без мам пап и кредитов!\uD83C\uDF0D",
+  "start_text": "\uD83E\uDD16Привет меня зовут Шенгена!\nЯ бот который подскажет тебе когда улететь в Европу, без мам пап и кредитов!\uD83C\uDF0D",
+  "many_count_checks_text": "У вас уже много проверок\uD83D\uDE21!",
   "user_messages": [
-    {"text": "Напиши да", "buttons": ["yes", "no"]},
-    {"text": "Пизда?", "buttons": ["yes", "no"]},
-    {"text": "Сука", "buttons": ["Rot", "VROT"]},
-    {"text": "argareg", "buttons": ["yes", "no"]},
-    {"text": "srtjh", "buttons": ["yeatjs", "ntjo"]},
-    {"text": "Сstrj", "buttons": ["Rrtjt", "VROT"]}
+    {"text": "Юрисдикция консульства:", "buttons": ["Moscow"]},
+    {"text": "Локация консульства:", "buttons": ["Moscow", "Rostov-on-Don", "Samara", "Kazan", "Yekaterinburg", "Novosibirsk", "Nizhny Novgorod"]},
+    {"text": "Тип визы:", "buttons": ["Schengen Visa"]},
+    {"text": "Под тип визы:", "buttons": ["Business", "Cultural Activities", "Drivers & Carriers", "EU/EEE family member", "Private Invitation", "Property owners", "Sailors", "Studies of less than 90 days", "Tourism", "Transit"]},
+    {"text": "Категория записи:", "buttons": ["Normal", "Premium", "Prime Time"]}
   ],
-  "user_columns": ["Some", "Some2", "Some3"]
+  "user_columns": ["jurisdiction", "location", "visa_type", "visa_sub_type", "appointment_category"]
 }

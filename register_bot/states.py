@@ -9,6 +9,6 @@ class State:
 
 
 class NewCheckerState(State):
-    table = UserTable()
+    table = BlsTable()
     messages = get_data_for_telegram_bot()["user_messages"]
     columns = get_data_for_telegram_bot()["user_columns"]
