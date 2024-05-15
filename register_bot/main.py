@@ -13,7 +13,7 @@ data = json_checker.get_data_for_telegram_bot()
 bot = Bot(token=data["token"])
 dp = Dispatcher()
 main_buttons = InlineKeyboardMarkup(
-    inline_keyboard=[[InlineKeyboardButton(text="Новая получасовая проверка", callback_data="new_checker")]])
+    inline_keyboard=[[InlineKeyboardButton(text="Новая проверка", callback_data="new_checker")]])
 data_listeners = {}
 user_table = UserTable()
 start_text = data["start_text"]
