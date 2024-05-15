@@ -34,7 +34,7 @@ class Parser:
         account_id = account[0]
         account_blses = self.bls_table.get_all_user_check(account[0])
         for blses in account_blses:
-            browser = self.open_browser_with_proxy(*blses[len(blses) - 3:])
+            """browser = self.open_browser_with_proxy(*blses[len(blses) - 3:])
             try:
                 authorizer = appointment.Authorizer(browser)
                 appointment_checker = appointment.AppointmentChecker(browser)
@@ -46,8 +46,9 @@ class Parser:
                 send_message(data, account_id)
             except Exception as e:
                 print(e)
-                browser.close()
-                send_message(f"Виз по городу {blses[5]} нет! Можете не обращать внимания.", account_id)
+                browser.close()"""
+            send_message(f"Виз по городу {blses[5]} нет! Можете не обращать внимания.", account_id)
+            self.sleep()
 
     def open_browser_with_proxy(self, ip_port: str, login: str, password: str) -> WebDriver:
         if not ip_port:
