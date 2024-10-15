@@ -60,11 +60,8 @@ async def get_answer(callback: CallbackQuery):
 
 
 def register_new_user(message: Message):
-    print("reg!")
-    print(user_table.select_user(message.from_user.id))
     if user_table.select_user(message.from_user.id):
         return
-    print("reged")
 
     user = {"id": message.from_user.id,
             "name": message.from_user.username,
@@ -103,9 +100,5 @@ def create_buttons(buttons_text: list[str]) -> InlineKeyboardMarkup:
     return buttons
 
 
-async def run():
-    await dp.start_polling(bot)
-
-
 def start():
-    asyncio.run(run())
+    asyncio.run(dp.start_polling(bot))

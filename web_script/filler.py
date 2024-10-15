@@ -8,26 +8,26 @@ import time
 
 class Filler:
     def __init__(self, browser: WebDriver):
-        self.browser = browser
-        self.sleep_time = json_checker.get_data_for_web_bot()["sleep_time"]
+        self.__browser = browser
+        self.__sleep_time = json_checker.get_data_for_web_bot()["sleep_time"]
 
     def fill_input(self, element: WebElement, text: str):
-        ActionChains(self.browser) \
+        ActionChains(self.__browser) \
             .click(element) \
             .send_keys(text) \
             .perform()
 
     def press_button_by_selector(self, element_selector: str):
-        button = self.browser.find_element(By.CSS_SELECTOR, element_selector)
-        ActionChains(self.browser) \
+        button = self.__browser.find_element(By.CSS_SELECTOR, element_selector)
+        ActionChains(self.__browser) \
             .click(button) \
             .perform()
 
     def fill_drop_down_list(self, element: WebElement, text: str):
         self.sleep()
-        ActionChains(self.browser).click(element).perform()
+        ActionChains(self.__browser).click(element).perform()
         self.sleep()
-        ActionChains(self.browser).send_keys(text).perform()
+        ActionChains(self.__browser).send_keys(text).perform()
         self.sleep()
         self.press_keyboard_button(Keys.ARROW_DOWN)
         self.press_keyboard_button(Keys.ENTER)
@@ -36,7 +36,7 @@ class Filler:
         for i in range(1, count + 1):
             element_selector = selector + str(i)
             if self.is_element_on_display(element_selector):
-                input_element = self.browser.find_element(By.CSS_SELECTOR, f"{selector}{i}")
+                input_element = self.__browser.find_element(By.CSS_SELECTOR, f"{selector}{i}")
                 if input_element.is_displayed():
                     self.fill_input(input_element, text_for_input)
                     break
@@ -45,28 +45,28 @@ class Filler:
         for i in range(1, count + 1):
             element_selector = selector_without_number + str(i)
             if self.is_element_on_display(element_selector):
-                element = self.browser.find_element(By.CSS_SELECTOR, element_selector)
+                element = self.__browser.find_element(By.CSS_SELECTOR, element_selector)
                 element = element.find_element(By.XPATH, "..")
                 if element.is_displayed():
                     self.fill_drop_down_list(element, text)
                     break
 
     def scroll(self, scroll_delta: int):
-        ActionChains(self.browser) \
+        ActionChains(self.__browser) \
             .scroll_by_amount(0, scroll_delta) \
             .perform()
 
     def press_keyboard_button(self, button_keys: str):
-        ActionChains(self.browser) \
+        ActionChains(self.__browser) \
             .send_keys(button_keys) \
             .perform()
 
     def sleep(self):
-        time.sleep(self.sleep_time)
+        time.sleep(self.__sleep_time)
 
     def is_element_on_display(self, element_selector: str) -> bool:
         try:
-            self.browser.find_element(By.CSS_SELECTOR, element_selector)
+            self.__browser.find_element(By.CSS_SELECTOR, element_selector)
             return True
         except NoSuchElementException:
             return False

@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb652747-80cc-4354-a5b1-426e46381693" name="Changes" comment="refactor for champ">
-      <change beforePath="$PROJECT_DIR$/json_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/json_checker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_script/appointment/authorizer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_script/appointment/checker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register_bot/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/register_bot/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register_bot/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/register_bot/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_script/appointment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_script/filler.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_script/filler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_script/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_script/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +29,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;lexter0705&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lexter0705/place_for_a_visa_checker.git&quot;,
+    &quot;accountId&quot;: &quot;7885cb8b-cf0e-4587-b063-ccae484471f5&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -31,24 +50,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.creator.executor": "Run",
-    "Python.data.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.start.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/MyProjects/place_for_a_visa_checker/start.py"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.creator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.start.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Мои проекты/place_for_a_visa_checker&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\MyProjects\place_for_a_visa_checker\database" />
       <recent name="D:\MyProjects\place_for_a_visa_checker" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Мои проекты\place_for_a_visa_checker\web_script\appointment" />
+      <recent name="D:\Мои проекты\place_for_a_visa_checker\web_script" />
       <recent name="D:\MyProjects\place_for_a_visa_checker" />
     </key>
   </component>
@@ -67,6 +94,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/start.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -85,7 +113,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
+        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
       </set>
     </attachedChunks>
   </component>
@@ -97,6 +126,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715263865688</updated>
+      <workItem from="1728940289945" duration="943000" />
+      <workItem from="1729005556705" duration="1178000" />
     </task>
     <task id="LOCAL-00001" summary="The project was moved from another repository&#10;&#10;Refactored:&#10;1) Bot remake for user&#10;2) Improved readability database classes">
       <option name="closed" value="true" />
@@ -156,6 +187,9 @@
     </task>
     <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
