@@ -60,7 +60,7 @@ class UserTable(DataBase):
     def update_count_of_checks(self, user_id: int):
         count = self.conn.execute(select(self.table.count_of_checked).where(self.table.id == user_id)).first()[0]
         count += 1
-        request = update(self.table).where(self.table.id == user_id).values(count_of_checked = count)
+        request = update(self.table).where(self.table.id == user_id).values(count_of_checked=count)
         self.commit(request)
         print(self.conn.execute(select(self.table.count_of_checked).where(self.table.id == user_id)).first()[0])
 

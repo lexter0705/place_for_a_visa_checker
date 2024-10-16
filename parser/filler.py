@@ -1,5 +1,6 @@
 from selenium.webdriver import ActionChains, Keys
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, NoAlertPresentException
+from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver, WebElement
 import json_checker
@@ -10,6 +11,17 @@ class Filler:
     def __init__(self, browser: WebDriver):
         self.__browser = browser
         self.__sleep_time = json_checker.get_data_for_web_bot()["sleep_time"]
+
+    def get_offset(self, element: WebElement, cords: list[list[int]]):
+        x_offset = (cords[1][0] - cords[0][0]) / 2 + cords[0][0] - element.size["width"] / 2
+        y_offset = ((cords[3][1] - cords[0][1]) / 2 + cords[0][1]) - element.size["height"] / 2
+        return x_offset, y_offset
+
+    def press_button_with_offset(self, element: WebElement, cords: list[list[int]]):
+        ActionChains(self.__browser) \
+            .move_to_element_with_offset(element, *self.get_offset(element, cords)) \
+            .click() \
+            .perform()
 
     def fill_input(self, element: WebElement, text: str):
         ActionChains(self.__browser) \
@@ -70,3 +82,9 @@ class Filler:
             return True
         except NoSuchElementException:
             return False
+
+    def accept_alert(self):
+        try:
+            Alert(self.__browser).accept()
+        except NoAlertPresentException:
+            pass

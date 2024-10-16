@@ -1,5 +1,5 @@
-from web_script.filler import Filler
-from web_script.captcha_checker import CaptchaChecker
+from parser.filler import Filler
+from parser.ai_checker.captcha_checker import CaptchaChecker
 from selenium.webdriver.remote.webdriver import WebDriver
 import json_checker
 

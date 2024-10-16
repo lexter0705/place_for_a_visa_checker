@@ -1,5 +1,5 @@
 from register_bot import main as telegram_bot
-from web_script import main as web_script
+from parser import parser as web_script
 from multiprocessing import Process
 from database import creator
 

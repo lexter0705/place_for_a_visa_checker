@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb652747-80cc-4354-a5b1-426e46381693" name="Changes" comment="refactor for champ">
-      <change afterPath="$PROJECT_DIR$/web_script/appointment/authorizer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_script/appointment/checker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parser/ai_checker/ai_element_checker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register_bot/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/register_bot/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register_bot/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/register_bot/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_script/appointment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_script/filler.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_script/filler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_script/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_script/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/setter.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/setter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_script/appointment/authorizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/appointment/authorizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_script/appointment/checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/appointment/checker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_script/captcha_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/ai_checker/captcha_checker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_script/filler.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/filler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_script/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_script/screens/screen_shot_1714078877.720086.png" beforeDir="false" afterPath="$PROJECT_DIR$/parser/screens/screen_shot_1714078877.720086.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_script/sender.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +77,7 @@
       <recent name="D:\MyProjects\place_for_a_visa_checker" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Мои проекты\place_for_a_visa_checker\parser\ai_checker" />
       <recent name="D:\Мои проекты\place_for_a_visa_checker\web_script\appointment" />
       <recent name="D:\Мои проекты\place_for_a_visa_checker\web_script" />
       <recent name="D:\MyProjects\place_for_a_visa_checker" />
@@ -127,7 +131,11 @@
       <option name="presentableId" value="Default" />
       <updated>1715263865688</updated>
       <workItem from="1728940289945" duration="943000" />
-      <workItem from="1729005556705" duration="1178000" />
+      <workItem from="1729005556705" duration="3118000" />
+      <workItem from="1729020495571" duration="3306000" />
+      <workItem from="1729041555275" duration="147000" />
+      <workItem from="1729041873500" duration="93000" />
+      <workItem from="1729103124376" duration="1851000" />
     </task>
     <task id="LOCAL-00001" summary="The project was moved from another repository&#10;&#10;Refactored:&#10;1) Bot remake for user&#10;2) Improved readability database classes">
       <option name="closed" value="true" />
