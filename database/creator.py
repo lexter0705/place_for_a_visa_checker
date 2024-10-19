@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine, Column, Integer, String, Boolean
 import json_checker
 
-DATABASE_URL = "sqlite:///" + json_checker.get_data_for_web_bot()["data_base_path"]
+DATABASE_URL = "sqlite:///" + json_checker.get_data_for_parser()["data_base_path"]
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
@@ -38,10 +38,10 @@ class Bls(Base):
     proxy_password = Column(String)
 
 
-def start():
+def create():
     Base.metadata.create_all(bind=engine)
     print("Database Created!")
 
 
 if __name__ == "__main__":
-    start()
+    create()

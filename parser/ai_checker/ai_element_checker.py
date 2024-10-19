@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 import json_checker
 from selenium.webdriver.remote.webdriver import WebDriver
-from parser.filler import Filler
 import easyocr
 import time
 import os
@@ -14,8 +13,7 @@ class AiElementChecker:
         self.__browser = browser
         self.__numbers_and_cords = []
         self.__image_path = ""
-        self.__path_to_screenshots = json_checker.get_data_for_web_bot()["path_to_screenshots"]
-        self.__filler = Filler(self.__browser)
+        self.__path_to_screenshots = json_checker.get_data_for_parser()["path_to_screenshots"]
         self.__element = None
 
     def screenshot(self):
@@ -38,9 +36,6 @@ class AiElementChecker:
         self.__element = None
         self.__numbers_and_cords = []
         self.__image_path = ""
-
-    def get_filler(self) -> Filler:
-        return self.__filler
 
     def get_element(self) -> WebElement:
         return self.__element

@@ -1,4 +1,4 @@
-from parser.filler import Filler
+from parser.filler.filler import Filler
 from parser.ai_checker.captcha_checker import CaptchaChecker
 from selenium.webdriver.remote.webdriver import WebDriver
 import json_checker
@@ -7,7 +7,7 @@ import json_checker
 class Authorizer:
     def __init__(self, browser: WebDriver, email: str, password: str):
         self.__browser = browser
-        self.__data = json_checker.get_data_for_web_bot()
+        self.__data = json_checker.get_data_for_parser()
         self.__captcha_checker = CaptchaChecker(self.__browser, "#popup_1")
         self.__filler = Filler(self.__browser)
         self.__email = ""
